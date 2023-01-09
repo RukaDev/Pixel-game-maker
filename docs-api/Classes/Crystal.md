@@ -2,71 +2,74 @@
 sidebar_position: 1
 ---
 
-## `Static`
+# Crystal
 
-### getAllCrystals()
+## Static
+
+### `reached`
+
+Checks if any of the crystals is reached.
 
 ```js
-Crystal.getAllCrystals() -> array
+Crystal.reached(crystals: array) -> none
 ```
 
-Returns all active crystals
+## Methods
 
-### canActivateAll()
-```js
-Lever.canActivateAll(levers: table) -> none
-```
+### `cleanup`
 
-Checks if each lever can be activated, and if so will activate them.
-
-## `Methods`
-
-### cleanup()
+Cleans up the crystal instance.
 
 ```js
 crystal:cleanup() -> null
 ```
 
-Cleans up the crystal instance
+### `isLast`
 
----
-
-### isLast()
+Returns true if instance is the last crystal left.
 
 ```js
 crystal:isLast() -> boolean
 ```
 
-Returns true if instance is the last crystal left.
+### `nextPosition`
 
----
-
-### activate()
+Moves crystal to the next location according to the `positionZone`
 
 ```js
-lever:activate() -> null
+crystal:nextPosition() -> none
 ```
 
-Plays an animation and calls the callback property if given.
+### `reached`
 
----
+Returns true if the player reaches the crystal with `positionZone` positioning.
 
-## `Properties`
+```js
+crystal:reached() -> none
+```
 
-### sprite
-    Type: sprite instance
-    Def:  Sprite to represent the crystal
+### `singleReached`
 
-### positionZone
-    Type: zone instance
-    Def:  The set of positions a crystal takes in order
+Returns true if the player reaches the crystal with `boundary` positioning.
 
-### boundary
-    Type: boundary instance
-    Def:  The crystal's hitbox
+```js
+crystal:singleReach() -> none
+```
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+## Properties
 
+### `sprite`
+* Type: `sprite instance`
+
+Sprite to represent the crystal.
+
+### `positionZone`
+* Type: `zone instance`
+
+The set of positions a crystal takes in order.
+
+### `boundary`
+* Type: `boundary instance`
+
+The crystal's position.
 

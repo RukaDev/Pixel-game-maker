@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="../css/game.css">
+
+    <!-- Fade API -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+        <canvas></canvas>
+    </div>
+
+    <div class="controls">
+      <div class="label">
+          <h1>Controls</h1>
+      </div>
+
+      <div class="keys">
+
+      </div>
+  </div>
+
+  <div class="header">
+      <h1></h1>
+      <h3></h3>
+  </div>
+</body>
+
+
+
+<!-- Classes -->
+<script src = '../js/classes/player.js'></script>
+<script src = '../js/classes/boundary.js'></script>
+<script src = '../js/classes/sprite.js'></script>
+<script src = '../js/classes/zone.js'></script>
+
+<!-- Util -->
+<script src = '../js/util/math.js'></script>
+<script src = '../js/util/table.js'></script>
+<script src="../js/util/storage.js"></script>
+
+
+<!-- Modules -->
+<script src="../js/modules/fps.js"></script>
+<script src="../js/modules/fade.js"></script>
+<script src="../js/modules/image.js"></script>
+<script src="../js/modules/input.js"></script>
+<script src="../js/modules/canvas.js"></script>
+<script src="../js/modules/level.js"></script>
+
+<script>
+
+  // Config
+  var info = {
+    Crystal: {
+      js: [
+        '../js/data/zones/crystal/boundary.js',
+        '../js/data/zones/crystal/crystal.js',
+        '../js/classes/crystal.js',
+        '../js/scripts/crystal.js'
+      ],
+
+      keys: {
+        w: "Up",
+        a: "Left",
+        s: "Down",
+        d: "Right"
+      },
+
+      images: {
+        background: '../media/images/maps/crystal/map.png',
+        player: '../media/images/sprites/characters/chara.png',
+        foreground: '../media/images/maps/crystal/foreground.png',
+        crystal: '../media/images/sprites/crystals/blue-crystal.png'
+      },
+
+      title: "Green Village",
+      description: "Use 'WASD' to traverse the map and collect crystals.",
+    },
+
+  }
+
+  var gameName = sessionStorage.getItem('gameName')
+
+  // Setup scripts
+  info[gameName].js.forEach(val => {
+    var s = document.createElement('script')
+    s.src = val
+    document.getElementsByTagName('head')[0].appendChild(s)
+  })
+
+  // Setup styling
+  var spans = document.querySelectorAll('.aligned span')
+  var images = document.querySelectorAll('.aligned img')
+  var title = document.querySelector('.header h1')
+  var desc = document.querySelector('.header h3')
+
+  title.textContent = info[gameName].title
+  desc.textContent = info[gameName].description
+
+  var ctr = 0
+  for (const [key, value] of Object.entries(info[gameName].keys)) {
+    var aligned = document.createElement('div')
+    aligned.classList.add('aligned')
+
+    var parent = document.querySelector('.keys')
+    parent.append(aligned)
+
+    var img = document.createElement('img')
+    img.src = '../media/images/keys/a.png'
+    img.src = '../media/images/keys/' + key + '.png'
+
+    var span = document.createElement('span')
+    span.textContent = value
+    span.style.fontFamily = "font-family: 'Share Tech Mono', monospace;"
+
+    aligned.append(img)
+    aligned.append(span)
+
+    ctr++
+  }
+
+</script>
+
+<script>
+  // Pre-load images
+  window.onload = function() {
+    imageLoader(info[gameName].images, function(images) {
+      setupGame(images)
+    })
+  }
+</script>
+
+
+</html>
+
+

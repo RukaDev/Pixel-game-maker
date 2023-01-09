@@ -2,82 +2,83 @@
 sidebar_position: 2
 ---
 
-### `Static`
+# Trap
 
-## assignCallback()
+## Static
+
+### `assignCallback`
+
+Assigns callbacks to each trap instance.
 
 ```js
-Trap.assignCallback(traps: array, callback: func) -> none
+Trap.assignCallback(traps: array, callback: function) -> none
 ```
 
-Assigns callbacks to each trap instance
+### `reached`
 
----
+Checks if each trap has hit the player.
 
-## `Methods`
+```js
+Trap.reached(traps: array, pos: array) -> none
+```
 
-### isActive()
+## Methods
+
+### `isActive`
+
+Returns true if the instance is active.
 
 ```js
 trap:isActive() -> boolean
 ```
 
-Returns true if the instance is active
+### `reset`
 
----
-
-### reset()
+Resets the trap.
 
 ```js
 trap:reset() -> none
 ```
 
-Resets the trap
+### `set`
 
----
-
-### set()
+Set the traps to active.
 
 ```js
 trap:set() -> none
 ```
 
-Sets the trap()
+### `hitPlayer`
 
----
-
-### hitPlayer()
+Returns true if the trap hits the player.
 
 ```js
 trap:hitPlayer() -> boolean
 ```
 
-Returns true if the trap hits the player
+### `setMovement`
 
----
-
-### setMovement()
+Sets the trap to be active for intervalLength, and delayed for delayLength.
 
 ```js
-trap:setMovement(intervalLength: int, delayLength: int) -> none
+trap:setMovement(intervalLength: number, delayLength: number) -> none
 ```
 
-Sets the trap to be active for intervalLength, and delayed for delayLength
+## Properties
 
----
+### `sprite`
+* Type: `sprite instance`
 
-## `Properties`
+Sprite to represent the trap.
 
-### sprite
-    Type: sprite instance
-    Def:  Sprite to represent the trap
+### `timing`
+* Type: `object`
 
-### zone
-    Type: zone
-    Def:  A zone instance
+The interval and delay times for the instance.
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+### `position`
+* Type: `array`
+
+Position of the instance on the canvas
 
 

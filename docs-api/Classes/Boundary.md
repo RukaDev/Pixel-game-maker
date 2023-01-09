@@ -2,66 +2,60 @@
 sidebar_position: 2
 ---
 
-## `Methods`
+# Boundary
 
-### collision()
+## Methods
+
+### `collision`
+
+Returns true if the sprite collides with the boundary instance.
 
 ```js
-boundary:collision(sprite: sprite, x: int, y: int) -> boolean
+boundary:collision(sprite: sprite, x: numher, y: number) -> boolean
 ```
 
-Returns true if the sprite collides with the boundary instance
+### `cleanup`
 
----
-
-### cleanup()
+Removes all references of the instance.
 
 ```js
 boundary:cleanup() -> none
 ```
 
-Removes all references of the instance
+### `proximity`
 
----
-
-### proximity()
+Returns true if p1 is within amnt of the instance.
 
 ```js
 boundary:proximity(p1: array, amnt: int) -> boolean
 ```
 
-Returns true if p1 is within amnt of the instance
+### `inside`
 
----
-
-### inside()
+Returns true if the sprite is completely within the instance
 
 ```js
 boundary:inside(sprite: sprite) -> boolean
 ```
 
-Returns true if the sprite is within the instance
+### `draw`
 
----
-
-### draw()
+Draws the instance on the canvas.
 
 ```js
 boundary:draw() -> none
 ```
 
-Draws the instance on the canvas
+## Properties
 
----
+### `zone`
+* Type: `zone instance`
 
-## `Properties`
-
-### zone
-    Type: zone
-    Def:  A zone instance
+The zone a boundary belongs to.
     
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+### `position`
+* Type `array`
+
+Position of the sprite on the canvas
 
 

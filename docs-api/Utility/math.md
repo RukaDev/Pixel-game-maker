@@ -2,56 +2,30 @@
 sidebar_position: 2
 ---
 
-## `Methods`
+# Math
 
-### distance()
+## Functions
 
-```js
-Math:distance(p1: table, p2: table) -> int
-```
+### `distance`
 
 Returns the distance between two positions.
 
----
-
-### bounded()
-
 ```js
-Math.bounded(position: table) -> boolean
+Math:distance(p1: object, p2: object) -> number
 ```
 
-Returns true if the instance can be activated.
+### `collision`
 
----
-
-### collision()
+Returns true if the two rectangles overlap.
 
 ```js
-Math.collision() -> null
+Math.bounded(rectangle1: object, rectangle2: object, scale: number) -> boolean
 ```
 
-Plays an animation and calls the callback property if given.
+### `bounded`
 
----
-
-### inside()
+Returns true if one of the rectangles is completely inside another.
 
 ```js
-Math.inside()
+Math.bounded(rectangle1: object, rectangle2: object) -> boolean
 ```
-
-## `Properties`
-
-### callback
-    Type: Function
-    Def:  Callback called on activation
-    
-### image
-    Type: Image()
-    Def:  Sprite to represent the lever
-
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
-
-

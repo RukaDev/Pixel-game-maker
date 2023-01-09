@@ -2,50 +2,22 @@
 sidebar_position: 2
 ---
 
-## `Methods`
+# Array
 
-### removeValue()
+## Functions
 
-```js
-Table.removeValue(source: array, value: value) -> none
-```
+### `removeFromArray`
 
-Removes the value from the given array
-
----
-
-### canActivate()
+Removes a specific value from an array.
 
 ```js
-lever:canActivate(position: table) -> boolean
+Array.removeFromArray(arr: array, value: any) -> none
 ```
 
-Returns true if the instance can be activated.
+### `removeFromArrayAll`
 
----
-
-### activate()
+Removes all occurances of a specific value from an array.
 
 ```js
-lever:activate() -> null
+Array.removeFromArrayAll(arr: array, value: any) -> none
 ```
-
-Plays an animation and calls the callback property if given.
-
----
-
-## `Properties`
-
-### callback
-    Type: Function
-    Def:  Callback called on activation
-    
-### image
-    Type: Image()
-    Def:  Sprite to represent the lever
-
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
-
-

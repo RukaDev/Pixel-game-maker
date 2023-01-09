@@ -2,78 +2,77 @@
 sidebar_position: 2
 ---
 
-## `Methods`
+# Zone
 
-### removeBoundary()
+## Methods
 
-```js
-zone:removeBoundary(i: int)
-```
+### `removeBoundary`
 
-Removes a boundary instance
-
----
-
-### mapPosition
+Removes a boundary instance from the zone.
 
 ```js
-zone:mapPosition(elements: array, position: dict) -> Map
+zone:removeBoundary(i: number) -> none
 ```
 
-Maps each element to a boundary within the zone
+### `mapPosition`
 
----
-
-
-
-### cleanup()
+Maps each element to a boundary within the zone.
 
 ```js
-boundary:cleanup() -> none
+zone:mapPosition(elements: array, position: object) -> Map
 ```
 
-Removes all references of the instance
+### `assignBoundaries`
 
----
-
-### proximity()
+Assigns each element a boundary in the zone.
 
 ```js
-boundary:proximity(p1: array, amnt: int) -> boolean
+zone:assignBoundaries(elements: array, position: object, offset: object) -> none
 ```
 
-Returns true if p1 is within amnt of the instance
+### `draw`
 
----
-
-### inside()
+Draws all the boundaries on the canvas.
 
 ```js
-boundary:inside(sprite: sprite) -> boolean
+zone:draw() -> none
 ```
 
-Returns true if the sprite is within the instance
+### `cleanup`
 
----
-
-### draw()
+Removes all references of the instance.
 
 ```js
-boundary:draw() -> none
+zone:cleanup() -> none
 ```
 
-Draws the instance on the canvas
+### `proximity`
 
----
+Returns true if p1 is within amnt of the instance.
 
-## `Properties`
+```js
+zone:proximity(p1: object, amnt: number) -> boolean
+```
 
-### zone
-    Type: zone
-    Def:  A zone instance
+### `collision`
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+Returns true if the sprite collides with a boundary.
 
+```js
+zone:collision(sprite: sprite instance, x: number, y: number) -> boolean
+```
 
+### `proximitySort`
+
+Sorts the boundaries by proximity.
+
+```js
+zone:proximitySort(sprite: sprite instance) -> none
+```
+
+## Properties
+
+### `zoneData`
+* Type: `array`
+
+The boundary data to create a zone from.

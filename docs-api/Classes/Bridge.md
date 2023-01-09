@@ -2,72 +2,67 @@
 sidebar_position: 3
 ---
 
-## `Static`
+# Bridge
 
-### activateAll()
+## Static
+
+### `activateAll`
+
+Activates all bridges passed.
 
 ```js
 Bridge.activateAll(bridges: array) -> none
 ```
 
-Activates all bridges passed
+### `deactivateAll`
 
----
-
-### deactivateAll()
+Deactivates all bridges passed.
 
 ```js
 Bridge.deactivateAll(bridges: array) -> none
 ```
 
-Deactivates all bridges passed
+## Methods
 
----
+### `isActive`
 
-## `Methods`
-
-### isActive()
+Returns true if the instance has been activated.
 
 ```js
 bridge:isActive() -> boolean
 ```
 
-Returns true if the instance has been activated
+### `activate`
 
----
-
-### activate()
+Activates the bridge instance.
 
 ```js
 bridge:activate() -> none
 ```
 
-Activates the bridge instance
+### `deactivate`
 
----
-
-### deactivate()
+Deactivates the bridge instance.
 
 ```js
 bridge:deactivate() -> none
 ```
 
-Deactivates the bridge instance
+## Properties
 
----
+### `sprite`
+* Type: `sprite instance`
 
-## `Properties`
+Sprite to represent the bridge.
 
-### sprite
-    Type: sprite instance
-    Def:  Sprite to represent the bridge
+### `callback`
+* Type: `function`
 
-### callback
-    Type: Function
-    Def:  Callback called on activation
+Function called on activation.
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+### `position`
+* Type: `object`
+
+Position of the sprite on the canvas.
 
 

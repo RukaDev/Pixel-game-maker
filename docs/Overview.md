@@ -14,11 +14,51 @@ Used to setup all the assets, images, and other info used in the game. Images is
 
 ```js title="src/js/scripts/home.js"
 setupGame(images) {
-    new Level(
-        images.background,
-        images.foreground,
-        {x: -15, y: -1600}
-    )
+    // Config
+    fade.in(4)
+    canvas.setup(1080, 1920)
+    input.setup('w')
+    fps.setup(75)
+
+    // Sprites
+    var backgroundSprite = new Sprite({
+        position: {
+            x: offset.x,
+            y: offset.y
+        },
+        image: images.background,
+        moveable: true
+    })
+
+    var playerSprite = new Sprite({
+        position: {
+            x: (canvas.instance.width / 2 - images.player.width / 8),
+            y: (canvas.instance.height / 2 - imsages.player.height / 2)
+        },
+        image: images.player,
+        frames: {xmax: 3, ymax: 4},
+        scale: 3.5
+    })
+
+    var foregroundSprite = new Sprite({
+        position: {
+            x: offset.x,
+            y: offset.y
+        },
+        moveable: true,
+        image: images.foreground
+    })
+
+    var crystalSprite = new Sprite({
+        image: images.crystal,
+        frames: {xmax: 3, ymax: 1},
+        velocity: 40,
+        scale: 2,
+        moveable: true
+    })
+
+    // Level
+    level.create(backgroundSprite, foregroundSprite, offset)
 
     // Zones
     var boundaryZone = new Zone(boundaryData)
@@ -26,17 +66,14 @@ setupGame(images) {
 
     // Player
     var player = new Player({
+        playerSprite: playerSprite,
         boundaryZones: [boundaryZone],
-        playerImage: images.player
     })
 
     // Crystal
     var crystal = new Crystal({
-        image: images.crystal,
+        sprite: crystalSprite,
         positionZone: crystalZone,
-        frame: {xmax: 3, ymax: 1},
-        velocity: 40,
-        scale: 2
     })
 
     startGame(player, crystal)
@@ -49,35 +86,38 @@ This is where the core game logic is. It controls how the game functions, and al
 
 ```js title="src/js/scripts/home.js"
 startGame(player, crystal) {
-    const canvas = Canvas.getInstance()
-    const input = Input.getInstance()
 
     // Core loop
     function step() {
         const animId = window.requestAnimationFrame(step)
 
-        // Crystal
-        if (crystal.reached(player.playerSprite)) {
-            if (crystal.isLast()) {
-                endGame(animId)
+        if (fps.advance()) {
+            // Crystal
+            if (crystal.reached(player.playerSprite)) {
+                if (crystal.isLast()) {
+                    endGame(animId)
+                } else {
+                    crystal.nextPosition()
+                }
+            }
+
+            // Movement
+            if (input.isPressed(['w', 'a', 's', 'd'])) {
+                var {x, y} = player.calculatePosition(input.lastKey)
+                if (player.canMove(x, y)) {
+                    player.animate(input.lastKey)
+                    canvas.moveElements(x, y)
+                }
             } else {
-                crystal.nextPosition()
+                player.stop()
             }
-        }
 
-        // Movement
-        if (input.isPressed(['w', 'a', 's', 'd'])) {
-            var {x, y} = player.calculatePosition(input.lastKey)
-            if (player.canMove(x, y)) {
-                player.animate(input.lastKey)
-                canvas.moveElements(x, y)
-            }
-        } else {
-            player.stop()
+            // Draw
+            canvas.drawElements()
         }
-
-        canvas.drawElements()
     }
+
+    step()
 }
 ```
 
@@ -88,6 +128,8 @@ This function is called within the startGame() function whenever the user determ
 ```js title="src/js/scripts/home.js"
 endGame(animId) {
     window.cancelAnimationFrame(animId)
-    fadeOut('home')
+    fade.out(1.5, function() {
+        history.back()
+    })
 }
 ```

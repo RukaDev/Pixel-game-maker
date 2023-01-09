@@ -12,8 +12,9 @@ The global section includes all classes, utils, and modules that are used within
 
 ```js
 <!-- Classes -->
-<script src = '/js/modules/image.js'></script>
-<script src = '/js/classes/input.js'></script>
+<script src = '/js/classes/player.js'></script>
+<script src = '/js/classes/boundary.js'></script>
+<script src = '/js/classes/sprite.js'></script>
 <script src = '/js/classes/sprite.js'></script>
 
 <!-- Utils -->
@@ -22,8 +23,10 @@ The global section includes all classes, utils, and modules that are used within
 <script src = '/js/util/storage.js'></script>
 
 <!-- Modules -->
-<script src = '/js/modules/fade.js'></script>
+<script src = '/js/modules/fps.js'></script>
 <script src = '/js/modules/image.js'></script>
+<script src = '/js/modules/fade.js'></script>
+<script src = '/js/modules/input.js'></script>
 <script src = '/js/modules/canvas.js'></script>
 ```
 

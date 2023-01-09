@@ -2,67 +2,67 @@
 sidebar_position: 2
 ---
 
-## `Static`
+# Lever
 
-### activateAll()
+## Static
 
-```js
-Lever.activateAll(levers: table) -> none
-```
+### `activateAll`
 
 Activates all levers passed, regardless if canActivate() returns true.
 
-### canActivateAll()
 ```js
-Lever.canActivateAll(levers: table) -> none
+Lever.activateAll(levers: array) -> none
 ```
+
+### `activateCheck`
 
 Checks if each lever can be activated, and if so will activate them.
 
-## `Methods`
+```js
+Lever.activateCheck(levers: array) -> none
+```
 
-### isActivated()
+## Methods
+
+### `isActivated`
+
+Returns true if the instance has been activated.
 
 ```js
 lever:isActivated() -> boolean
 ```
 
-Returns true if the instance has been activated.
-
----
-
-### canActivate()
-
-```js
-lever:canActivate(position: table) -> boolean
-```
+### `canActivate`
 
 Returns true if the instance can be activated.
 
----
+```js
+lever:canActivate(position: array) -> boolean
+```
 
-### activate()
+### `activate`
+
+Plays an animation and calls the callback property if given.
 
 ```js
 lever:activate() -> null
 ```
 
-Plays an animation and calls the callback property if given.
+## Properties
 
----
+### `sprite`
+* Type: `sprite instance`
 
-## `Properties`
+Sprite to represent the lever
 
-### sprite
-    Type: sprite instance
-    Def:  Sprite to represent the lever
+### `callback`
+* Type: `function`
 
-### callback
-    Type: Function
-    Def:  Callback called on activation
+Callback called on activation
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+### `position`
+* Type: `array`
+
+Position of the sprite on the canvas
 
 

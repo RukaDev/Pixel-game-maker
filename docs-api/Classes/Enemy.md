@@ -2,82 +2,73 @@
 sidebar_position: 2
 ---
 
-## `Static`
+# Enemy
 
-### moveAll()
+## Static
+
+### `moveAll`
+
+Move all the enemies if canMove() returns true.
 
 ```js
 Enemy.moveAll(enemies: array) -> none
 ```
 
-Move all the enemies if canMove() returns true
+### `removeAll`
 
----
-
-### removeAll()
+Removes all the enemies in the given array.
 
 ```js
 Enemy.removeAll(enemies: array) -> none
 ```
 
-Removes all the enemies in the given array
+## Methods
 
----
-
-## `Methods`
-
-### moveVertical()
+### `moveVertical`
 
 ```js
 enemy:moveVertical() -> none
 ```
 
-Moves the instance vertical
+Moves the instance vertically.
 
----
+### `moveHorizontal`
 
-### moveHorizontal()
+Moves the instance horizontally.
 
 ```js
 enemy.moveHorizontal() -> none
 ```
 
-Moves the instance horizontally
+### `cleanup`
 
----
-
-### cleanup()
+Removes all references of the instance.
 
 ```js
 enemy:cleanup() -> none
 ```
 
-Removes all references of the instance
+### `move`
 
----
-
-### move()
+Moves the enemy according to movex and movey.
 
 ```js
 enemy:move() -> none
 ```
 
-Moves the enemy according to movex and movey
+### `canMove`
 
----
+Returns true if the enemy can move.
 
-## `Properties`
+```js
+enemy:canMove() -> boolean
+```
 
-### sprite
-    Type: sprite instance
-    Def:  Sprite to represent the enemy
 
-### zone
-    Type: zone
-    Def:  A zone instance
+## Properties
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+### `sprite`
+* Type: sprite instance
 
+Sprite to represent the enemy.
 

@@ -2,93 +2,86 @@
 sidebar_position: 2
 ---
 
-## `Methods`
+# Player
 
-### animate()
+## Methods
+
+### `animate`
+
+Sets the spritesheet to the new key value.
 
 ```js
-player:animate(key: int) -> none
+player:animate(lastKey: string) -> none
 ```
 
-Sets the spritesheet to the new key value
+### `stop`
 
----
-
-### stop()
+Stops the player movement.
 
 ```js
 player:stop() -> none
 ```
 
-Stops the player 
+### `canAttack`
 
----
-
-### canAttack() 
+Returns true if the player can attack.
 
 ```js
 player:canAttack() -> boolean
 ```
 
-Returns true if the player can attack
+### `calculatePosition`
 
----
-
-
-### calculatePosition()
+Calculates the next x, y position of the player.
 
 ```js
 player:calculatePosition(lastKey: string) -> array
 ```
 
-Calculates the next x, y position of the player
+### `canMove`
 
----
-
-### canMove()
+Returns true if the player can move.
 
 ```js
 player:canMove() -> boolean
 ```
 
-Returns true if the player can move
+### `attack`
 
----
-
-### attack()
+Plays attack animation and runs hit detection on the passed enemies.
 
 ```js
-player:attack(enemies) -> none
+player:attack(enemies: array) -> none
 ```
 
-Plays attack animation and runs hit detection on the passed enemies
+### `attackFinished`
 
-### attackFinished()
+Resets player after an attack.
 
 ```js
 player:attackFinished() -> none
 ```
 
-Finishes a player attack
+## Properties
 
----
+### `playerSprite`
+* Type: `sprite instance`
 
-## `Properties`
+Sprite to represent the player.
 
-### playerSprite
-    Type: sprite instance
-    Def:  Sprite to represent the player
+### `attackSprite`
+* Type: `sprite instance`
 
-### attackSprite
-    Type: sprite instance
-    Def:  Sprite to represent player attacks
+Sprite to represent player attacks.
 
-### zone
-    Type: zone
-    Def:  A zone instance
+### `enemyZones`
+* Type: `zone instance`
 
-### position
-    Type: table
-    Def:  Position of the sprite on the canvas
+The boundaries used for hit detection on attacks.
+
+### `boundaryZones`
+* Type: `zone instance`
+
+The boundaries used for map collisions.
 
 
