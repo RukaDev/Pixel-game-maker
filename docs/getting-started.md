@@ -5,5 +5,10 @@ sidebar_position: 2
 # Installation
 
 ## Install
-Within the github repository is an example game made with open sourced assets. The remaining documentation for the guide will reference this 
-example game to explain how to setup and run your own game.
+To install, download the latest source file in the [relases](https://github.com/rukadev/elixir2d/releases) page.
+
+---
+
+## Note
+Within the source file is an example game that the remainder of the documentation will reference. The provided assets used within the example game are open sourced.
+

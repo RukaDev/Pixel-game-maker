@@ -14,13 +14,17 @@ Used to setup all the assets, images, and other info used in the game. Images is
 
 ```js title="src/js/scripts/home.js"
 setupGame(images) {
-    // Config
+    // Effect
     fade.in(4)
-    canvas.setup(1080, 1920)
-    input.setup('w')
-    fps.setup(75)
+
+    // Technical
+    canvas.create(1080, 1920)
+    input.register('w')
+    fps.set(75)
 
     // Sprites
+    var offset = {x: -25, y: -1600}
+
     var backgroundSprite = new Sprite({
         position: {
             x: offset.x,

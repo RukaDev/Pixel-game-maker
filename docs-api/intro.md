@@ -4,15 +4,11 @@ sidebar_position: 1
 
 # Guide
 
-### `Classes​`
+### `Classes`
+Classes are comprise of gameplay-specific features.
 
-Classes are comprised of gameplay-specific methods.
+### `Utility`
+Utility scripts compose of independent, commonly used functions.
 
-### `Utility​`
-
-Utility scripts are composed of independent, commonly used methods.
-
-### `Modules​`
-
-Module scripts consist of frequently used game-specific methods.
-
+### `Modules`
+Module files consist of frequently used game-specific helper methods.

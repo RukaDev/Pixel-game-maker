@@ -15,7 +15,7 @@ The global section includes all classes, utils, and modules that are used within
 <script src = '/js/classes/player.js'></script>
 <script src = '/js/classes/boundary.js'></script>
 <script src = '/js/classes/sprite.js'></script>
-<script src = '/js/classes/sprite.js'></script>
+<script src = '/js/classes/zone.js'></script>
 
 <!-- Utils -->
 <script src = '/js/util/math.js'></script>
@@ -31,13 +31,13 @@ The global section includes all classes, utils, and modules that are used within
 ```
 
 ### Classes
-Classes are referenced by 'js/classes/', and comprise of gameplay-specific methods.
+Classes are referenced by `'js/classes/'`, and comprise of gameplay-specific features.
 
 ### Utility
-Utility files are referenced by 'js/utility/', and compose of independent, commonly used methods.
+Utility scripts are referenced by `'js/utility/'`, and compose of independent, commonly used functions.
 
 ### Modules
-Module files are referenced by 'js/modules/', and consist of frequently used game-specific methods.
+Module files are referenced by `'js/modules/'`, and consist of frequently used game-specific helper methods.
 
 ---
 
