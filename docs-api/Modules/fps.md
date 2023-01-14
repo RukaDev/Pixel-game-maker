@@ -6,12 +6,12 @@ sidebar_position: 2
 
 ## Methods
 
-### `setup`
+### `set`
 
 Sets the fps of the game.
 
 ```js
-fps.setup(amount: number) -> null
+fps.set(amount: number) -> null
 ```
 
 ### `advance`

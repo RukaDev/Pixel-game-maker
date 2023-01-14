@@ -38,12 +38,12 @@ Removes an element from the `drawn` and `moveable` arrays.
 canvas.removeElement(element: any) -> null
 ```
 
-### `setup`
+### `create`
 
 Creates a canvas.
 
 ```js
-canvas.setup(width: number, height: number) -> null
+canvas.create(width: number, height: number) -> null
 ```
 
 

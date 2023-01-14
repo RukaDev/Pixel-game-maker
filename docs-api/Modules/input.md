@@ -6,12 +6,12 @@ sidebar_position: 2
 
 ## Methods
 
-### `setup`
+### `register`
 
 Initializes input detection and sets initial keydown
 
 ```js
-input.setup(key: string) -> null
+input.register(key: string) -> null
 ```
 
 ### `isPressed`
