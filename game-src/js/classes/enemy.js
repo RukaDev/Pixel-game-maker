@@ -8,10 +8,16 @@ class Enemy {
         })
     }
     
-    constructor(sprite) {
+    constructor(sprite, vertical) {
         this.sprite = sprite
         this.moving = false
-        this.horizontal()
+        this.moveLength = 1500
+        if (vertical) {
+            this.vertical()
+        } else {
+            this.horizontal() // default to horizontal
+        }
+
     }
 
     vertical() {
@@ -26,7 +32,7 @@ class Enemy {
                 var dir = (this.movey === -1) ? 3 : 0
                 this.sprite.frames.yval = dir
             }
-        }.bind(this), 1500)
+        }.bind(this), this.moveLength)
     }
 
     horizontal() {
@@ -41,7 +47,7 @@ class Enemy {
                 var dir = (this.movex === -1) ? 2 : 0
                 this.sprite.frames.xval = dir
             }
-        }.bind(this), 1500)
+        }.bind(this), this.moveLength)
     }
 
     cleanup(enemys) {

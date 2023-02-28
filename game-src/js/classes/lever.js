@@ -8,6 +8,12 @@ class Lever {
         }) 
     }
 
+    static activateAll(levers) {
+        levers.forEach(lever => {
+            ever.activate()
+        })
+    }
+
     constructor(sprite, callback) {
         this.sprite = sprite
 
