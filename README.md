@@ -3,8 +3,8 @@
 	<img src="./static/img/pixel.png" alt="Matter" width="300" />
 	<br><br><br>
 	<p>An open source framework for HTML5 powered browser games.</p>
-	<a href="https://rukadev.github.io/elixir2d/"><strong>View docs &rarr;</strong></a>
+	<a href="https://jbogs.github.io/elixir2d/"><strong>View docs &rarr;</strong></a>
   <br><br><br>
 
-  Made by [@rukadev](https://github.com/rukadev)
+  Made by [@jbogs](https://github.com/jbogs)
 </div>
